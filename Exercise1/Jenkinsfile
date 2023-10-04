@@ -9,6 +9,12 @@ pipeline {
         EC2_USER = 'ubuntu'
 
     }
+    
+    node {
+    stage('Prepare Workspace') {
+        // Clean workspace before starting
+        cleanWs()
+    }
 
     stages {
 
