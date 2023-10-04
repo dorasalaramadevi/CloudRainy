@@ -20,7 +20,8 @@ pipeline {
 
                     sh 'ls'
 
-                    sh 'docker buildx build -t task1 -f Dockerfile'
+                    sh 'docker buildx build -t task1 -f Dockerfile .'
+
 
                 }
 
