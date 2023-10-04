@@ -16,7 +16,7 @@ pipeline {
 
             steps {
 
-                dir('Test_exe11') {
+                dir('Exercise11') {
 
                     sh 'ls'
 
