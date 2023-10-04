@@ -4,7 +4,7 @@ pipeline {
 
     environment {
 
-        EC2_HOST = '16.16.211.89'
+        EC2_HOST = '13.48.104.196 '
 
         EC2_USER = 'ubuntu'
 
@@ -16,11 +16,11 @@ pipeline {
 
             steps {
 
-                dir('GetApi') {
+                dir('Exercise15') {
 
                     sh 'ls'
 
-                    sh 'docker build -t flask -f getDockerfile .'
+                    sh 'docker build -t xmltodict -f Dockerfile .'
 
                 }
 
@@ -36,9 +36,9 @@ pipeline {
 
                 sh "docker login -u rama987 -p Dorasala@123devi"
 
-                sh 'docker tag flask rama987/rama:flask'
+                sh 'docker tag flask rama987/rama:xmltodict'
 
-                sh "docker push rama987/rama:flask"
+                sh "docker push rama987/rama:xmltodict"
 
             }
 
@@ -65,9 +65,9 @@ pipeline {
 
                             sudo docker login -u rama987/rama -p 'Dorasala@123devi'
 
-                            sudo docker pull rama987/rama:flask
+                            sudo docker pull rama987/rama:xmltodict
 
-                            sudo docker run -d -p 5000:5000 --name flask-app rama987/rama:flask
+                            sudo docker run -d -p 5000:5000 --name xmltodict-app rama987/rama:xmltodict
 
 
                         """
