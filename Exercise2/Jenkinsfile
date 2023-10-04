@@ -22,7 +22,7 @@ pipeline {
 
                     sh 'docker build -t server -f server_Dockerfile .'
 
-                    sh 'docker build -t client -f client_Dockerfile .'
+                    
 
                 }
 
@@ -38,9 +38,9 @@ pipeline {
 
                 sh "docker login -u rama987 -p Dorasala@123devi"
 
-                sh 'docker tag flask rama987/rama:flask'
+                sh 'docker tag flask rama987/rama:server'
 
-                sh "docker push rama987/rama:flask"
+                sh "docker push rama987/rama:server"
 
             }
 
@@ -67,9 +67,9 @@ pipeline {
 
                             sudo docker login -u rama987/rama -p 'Dorasala@123devi'
 
-                            sudo docker pull rama987/rama:flask
+                            sudo docker pull rama987/rama:server
 
-                            sudo docker run -d -p 5000:5000 --name flask-app rama987/rama:flask
+                            sudo docker run -d -p 5000:5000 --name flask-app rama987/rama:server
 
 
                         """
