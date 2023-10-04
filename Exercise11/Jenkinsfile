@@ -20,7 +20,7 @@ pipeline {
 
                     sh 'ls'
 
-                    sh 'docker build -t test -f Dockerfile .'
+                    sh 'docker build -t Dockerfile-dock .'
 
                 }
 
