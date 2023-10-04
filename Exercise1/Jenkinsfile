@@ -67,7 +67,7 @@ pipeline {
 
                             sudo docker pull rama987/rama:flask
 
-                            sudo docker run -d -p 5000:5000 --name flask-app rama987/rama:flask
+                            sudo docker run -d -p 5001:5001 --name flask-app rama987/rama:flask
 
 
                         """
