@@ -2,19 +2,13 @@ from pyats import aetest
 
 from pyats.topology import loader
 
- 
-
 # Load the testbed configuration
 
 testbed = loader.load('my_yaml1.yaml')
 
- 
-
 # Define a testcase class
 
 class MyTestcase(aetest.Testcase):
-
- 
 
     # Connect to the device
 
@@ -26,7 +20,6 @@ class MyTestcase(aetest.Testcase):
 
         self.device.connect()
 
- 
 
     # Check if the device is reachable
 
@@ -63,8 +56,6 @@ class MyTestcase(aetest.Testcase):
     def disconnect_from_device(self):
 
         self.device.disconnect()
-
- 
 
 # Run the testcases
 
